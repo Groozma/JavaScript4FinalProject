@@ -1,0 +1,21 @@
+@import '../../Styles/variables.scss';
+
+.footer {
+    background-color: $secondary-color;
+    padding: 2vh 0vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    img {
+        width: 75px;
+    }
+}
+
+@media screen and (min-width: 800px){
+    .footer {
+        img {
+            width: 100px;
+        }
+    }
+}
