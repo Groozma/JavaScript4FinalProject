@@ -1,33 +1,66 @@
-import './Income.scss';
-import { useState } from 'react';
+import "./Income.scss";
+import "../../Styles/buttons.scss";
+import { useState } from "react";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { db, auth } from "../../firebase";
 
-function Income() {
-    const [income, setIncome] = useState(0);
+function Income({ onFundsUpdated }) {
+  const [amount, setAmount] = useState("");
+  const [error, setError] = useState("");
 
-    const handleIncomeChange = (event) => {
-        setIncome(event.target.value)
+  const handleChange = (event) => {
+    setAmount(event.target.value);
+    setError("");
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (amount === "") return;
+
+    const value = Number(amount);
+
+    if (value < 0) {
+      setError("Income cannot be negative.");
+      return;
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    if (Number.isNaN(value)) {
+      setError("Please enter a valid number.");
+      return;
     }
 
-    return (
-        <div className='income'>
-            <h3>Add Income</h3>
-            <form className='income-form' onSubmit={handleSubmit}>
-                <label>Income:
-                    <input
-                        type='number'
-                        maxLength={12}
-                        value={income}
-                        onChange={handleIncomeChange}
-                    />
-                </label>
-                <button type='submit'>Submit Income</button>
-            </form>
-        </div>
-    )
+    const user = auth.currentUser;
+    const ref = doc(db, "users", user.uid);
+
+    const snap = await getDoc(ref);
+    const currentFunds = Number(snap.data().funds) || 0;
+
+    const updated = currentFunds + value;
+
+    await updateDoc(ref, { funds: updated });
+
+    onFundsUpdated(updated);
+    setAmount("");
+  };
+
+  return (
+    <div className="income">
+      <h3>Add Income</h3>
+
+      <form className="income-form" onSubmit={handleSubmit}>
+        <label>
+          Amount:
+          <input type="number" min="0" value={amount} onChange={handleChange} />
+        </label>
+
+        {error && <p className="error">{error}</p>}
+
+        <button type="submit" className="btn">
+          Add Income
+        </button>
+      </form>
+    </div>
+  );
 }
 
 export default Income;

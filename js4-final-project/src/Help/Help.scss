@@ -1,10 +1,37 @@
+@import "../Styles/variables.scss";
+
 .help {
-    ul {
-        li {
-            list-style: none;
-            a {
-                color: black;
-            }
-        }
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  text-align: center;
+
+  h2 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: black;
+  }
+}
+
+.help-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  li a {
+    color: black;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 400;
+  }
+  li {
+    margin-bottom: 1.5rem;
+  }
 }
