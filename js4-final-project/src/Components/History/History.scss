@@ -1,0 +1,70 @@
+@import "../../Styles/variables.scss";
+
+.history-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+.history-page h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  font-weight: bold;
+  padding: 1.5rem;
+  border-bottom: 2px solid #ccc;
+}
+
+.history-list {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.columns.row {
+  display: flex;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.columns.row span {
+  flex: 1;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+@media screen and (min-width: 800px) {
+  .history-page h2 {
+    font-size: 1.6rem;
+    letter-spacing: 0.2rem;
+    word-spacing: 0.5rem;
+    padding: 2rem;
+    margin: 0.5rem;
+  }
+
+  .header-row {
+    justify-content: space-evenly;
+    padding: 2rem;
+  }
+
+  .history-list {
+    padding: 2rem;
+  }
+
+  .columns {
+    padding: 1rem;
+    gap: 4rem;
+  }
+}

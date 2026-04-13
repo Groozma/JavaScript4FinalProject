@@ -1,8 +1,12 @@
-@import './Styles/variables.scss';
+@import "./Styles/variables.scss";
+@import "./Styles/buttons.scss";
 
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   margin: 0;
+  padding: 0;
 }
 
 .App {
@@ -11,11 +15,12 @@ html, body, #root {
   min-height: 100vh;
   background-color: $primary-color;
   text-align: center;
+}
 
-  main {
-    flex: 1;                
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.App main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
 }

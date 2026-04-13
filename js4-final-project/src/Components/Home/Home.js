@@ -1,28 +1,18 @@
-import './Home.scss';
-import Expense from '../Expense/Expense';
-import Transactions from '../Transactions/Transactions';
-import Income from '../Income/Income';
+import "./Home.scss";
+import Nav from "../Nav/Nav";
 
-function Home() {
-    return (
-        <div>
-            <h2>Welcome (InsertFirstNameHere) to PiggyPal!</h2>  
-            <div className='home'>
-                <div>
-                    <div className='columns'>
-                        <div>Amount</div>
-                        <div>Category</div>
-                        <div>Date & Time</div>
-                    </div>
-                    <Transactions />
-                    </div>
-                    <div className='expenses'>
-                    <Expense />
-                    <Income />
-                </div>
-            </div>
-        </div>
-    )
+function Home({ firstName, funds, onUpdateFunds }) {
+  return (
+    <div className="home-wrapper">
+      <h2 className="home-title">Welcome {firstName} to PiggyPal!</h2>
+
+      <Nav onUpdateFunds={onUpdateFunds} />
+
+      <div className="balance-box">
+        <h3>Total Funds Available: ${funds}</h3>
+      </div>
+    </div>
+  );
 }
 
 export default Home;

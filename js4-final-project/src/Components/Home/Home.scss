@@ -1,27 +1,55 @@
-.home {
-    div {
-        .columns {
-            display: flex;
-            flex-direction: row;
-            font-weight: bold;
-            font-size: .9rem;
-            padding: 10px 5px;
-            
-            div,span {
-                flex: 1;
-                text-align: left;   
-            }
-        }
-    }
+@import "../../Styles/variables.scss";
+
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  text-align: center;
+  gap: 1.5rem;
 }
 
-@media screen and (min-width: 800px){
-    .home {
-        display: flex;
-        div {
-            .columns {
-                font-size: 1.2rem;
-            }
-        }
-    }
+.home-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
+
+.balance-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75rem;
+  background-color: $secondary-color;
+  border-radius: 10px;
+  box-sizing: border-box;
+
+  h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .home-wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .home-title {
+    font-size: 2rem;
+    box-sizing: content-box;
+    padding: 1rem;
+    margin: 2rem;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.6rem;
+  }
+
+  .balance-box {
+    padding: 2rem;
+    box-sizing: content-box;
+    margin: 2rem;
+  }
 }

@@ -1,0 +1,63 @@
+@import "../../Styles/variables.scss";
+
+.popup-box h3 {
+  padding: 0.5rem 0;
+  font-weight: 600;
+  white-space: pre-line;
+}
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-box {
+  background: $primary-color;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 280px;
+  text-align: center;
+  position: relative;
+}
+
+.popup-box input,
+.popup-box select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 50px;
+  border: none;
+  margin-bottom: 1rem;
+  background: white;
+  font-size: 1rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.popup-box select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.close-btn {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: black;
+  line-height: 1;
+}
+
+.error {
+  color: red;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
