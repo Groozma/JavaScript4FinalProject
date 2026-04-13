@@ -1,0 +1,33 @@
+@import "./variables.scss";
+
+.btn {
+  padding: 0.75rem;
+  background-color: $secondary-color;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-weight: 500;
+}
+.help-btn {
+  padding: 0.5rem 3rem;
+  background-color: $secondary-color;
+  border-radius: 10px;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 800px) {
+  .btn {
+    padding: 0.8rem;
+    background-color: $secondary-color;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    box-sizing: content-box;
+  }
+}

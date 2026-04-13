@@ -1,30 +1,31 @@
-@import '../../Styles/variables.scss';
+@import "../../Styles/variables.scss";
 
 .income {
-    justify-self: center;
-    .income-form{
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        label {
-            display: flex;
-            flex-direction: row;
-            gap: 1rem;
-            justify-content: space-between;
-            font-size: 1rem;
-            input {
-                border-radius: 90px;
-                font-size: 1rem;
-                padding: 0 .2rem;
-            }
-        }
-        button {
-            font-size: 1rem;
-            padding: .5rem;
-            border-radius: 90px;
-            background-color: $secondary-color;
-            align-self: flex-end;
-            margin-bottom: 1rem;
-        }
-    }
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.income-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.income-form label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  gap: 1rem;
+}
+
+.income-form input {
+  border-radius: 90px;
+  font-size: 1rem;
+  padding: 0 0.2rem;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
 }

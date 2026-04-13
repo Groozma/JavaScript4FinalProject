@@ -1,19 +1,20 @@
-@import '../../Styles/variables.scss';
+@import "../../Styles/variables.scss";
 
 .header {
-    background-color: $secondary-color;
-    padding: 3vh 0vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    .piggybank {
-        width: 200px;
-    }
+  background-color: $secondary-color;
+  padding: 3vh 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .piggybank {
+    width: 200px;
+  }
 }
 
 @media screen and (min-width: 800px) {
-    .header {
-        flex-direction: row;
-    }
+  .header {
+    flex-direction: row;
+  }
 }
