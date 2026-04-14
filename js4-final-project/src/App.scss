@@ -15,12 +15,12 @@ body,
   min-height: 100vh;
   background-color: $primary-color;
   text-align: center;
+  main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+  }
 }
 
-.App main {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem;
-}
