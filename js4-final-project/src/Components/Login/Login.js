@@ -89,7 +89,7 @@ function Login() {
           </button>
         </div>
 
-        {invalid && <div className="invalid">Please fill in both fields</div>}
+        {invalid && <div className="invalid">Invalid information entered. Please try again</div>}
       </form>
     </div>
   );
